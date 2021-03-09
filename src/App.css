@@ -1,0 +1,21 @@
+.Instafeed {
+  float: left;
+  padding-left: 15px;
+  font-family :cursive;
+  height:20px;
+  
+}
+
+.header{
+border-bottom: 1px solid lightgray;
+height: 100px;
+background-color: #fafafa;
+/*position: fixed;*/              /*should make the header on top stay on the screen even when scrolling*/
+object-fit: contain;
+}
+
+.search{
+  float: left;
+  margin-left: 30% ;
+  padding: 40px;
+}
