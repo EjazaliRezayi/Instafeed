@@ -1,0 +1,17 @@
+.Post_pic{
+    width : 100%;
+    object-fit: contain;
+}
+.Post_text{
+    font-weight:normal;
+    padding: 20px;
+}
+
+.Post_header{
+    display: flex;
+    align-items: center;
+    padding : 20px
+}
+.Post_avatar{
+    margin-right: 10px;
+}
