@@ -1,0 +1,13 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 15.10.0
+
+install:
+  - npm ci
+
+cache: npm
+
+script: 'true'
