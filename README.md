@@ -14,7 +14,6 @@ Team Members:
 
 Core Features:
 
->Login<br />
 >Post a Picture<br />
 >Comment a Picture<br />
 >Follow a user<br />
@@ -24,6 +23,7 @@ Framework Used:
 
 Important Note:
 > New Feature will be added upon further team SCRUMS! <br/>
+>Login<br />
 
 
 <br><br><br>
