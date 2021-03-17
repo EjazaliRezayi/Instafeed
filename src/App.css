@@ -23,3 +23,10 @@ object-fit: contain;
   margin-left: 30%;
   padding: 40px;
 }
+.SignUp {
+  display: flex;
+  flex-direction: column;
+ 
+
+
+}
