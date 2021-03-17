@@ -1,33 +1,40 @@
+* {
+  margin :0;
+}
+
 .Instafeed {
   float: left;
   padding-left: 15px;
   font-family :cursive;
   height:20px;
-  
+  text-align: center;
 }
+
 .app__headerImage{
-float: left;
-position: relative;
-border: transparent;
+  object-fit: contain;
+}
+
+.app_posts {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .header{
-border-bottom: 1px solid lightgray;
-height: 100px;
-background-color: #fafafa;
-position: relative;             /*should make the header on top stay on the screen even when scrolling*/
-object-fit: contain;
+  border-bottom: 1px solid lightgray;
+  height: 100px;
+  background-color: #fafafa;
+  position: relative;             /*should make the header on top stay on the screen even when scrolling*/
+  object-fit: contain;
+  display: flex;
+  justify-content: space-between;
 }
 
 .search{
   float: left;
-  margin-left: 30%;
   padding: 40px;
 }
 .SignUp {
   display: flex;
   flex-direction: column;
- 
-
-
 }
