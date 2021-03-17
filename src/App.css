@@ -6,6 +6,7 @@
   
 }
 .app__headerImage{
+float: left;
 position: relative;
 border: transparent;
 }
