@@ -5,17 +5,21 @@
   height:20px;
   
 }
+.app__headerImage{
+position: relative;
+border: transparent;
+}
 
 .header{
 border-bottom: 1px solid lightgray;
 height: 100px;
 background-color: #fafafa;
-/*position: fixed;*/              /*should make the header on top stay on the screen even when scrolling*/
+position: relative;             /*should make the header on top stay on the screen even when scrolling*/
 object-fit: contain;
 }
 
 .search{
   float: left;
-  margin-left: 30% ;
+  margin-left: 30%;
   padding: 40px;
 }

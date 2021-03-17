@@ -1,6 +1,14 @@
+.post {
+    background-color:whitesmoke;
+    max-width: 500px;
+    border: 1px solid white;
+    margin-bottom: 40px;
+}
 .Post_pic{
     width : 100%;
     object-fit: contain;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 .Post_text{
     font-weight:normal;
@@ -10,7 +18,7 @@
 .Post_header{
     display: flex;
     align-items: center;
-    padding : 20px
+    padding : 20px;
 }
 .Post_avatar{
     margin-right: 10px;
