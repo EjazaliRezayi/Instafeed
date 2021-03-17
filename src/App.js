@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import post from './Post';
 import Post from './Post';
 // add auth
 import { datab, authentication } from './firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button , Input } from '@material-ui/core';
+import ImageUpload from './ImageUpload';
 
 function getModalStyle() {
   const top = 50; 
@@ -70,7 +70,7 @@ function App() {
   }, [user, username]);
   
   useEffect(() => {
-    datab.collection('posts').onSnapshot(snapshot => {
+    datab.collection('posts').orderBy('timestamp','desc').onSnapshot(snapshot => {
       setPosts(snapshot.docs.map(doc => ({id: doc.id, post: doc.data()})));
     })
 
@@ -103,7 +103,7 @@ const signIn = (event) => {
 
   return (
   <div className="Application">
-
+    
     <Modal
       open={open}
       onClose={() => setOpen(false)}
@@ -119,7 +119,7 @@ const signIn = (event) => {
 
                 <Input
                 placeholder="username"
-                type="username"
+                type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 />
@@ -180,47 +180,50 @@ const signIn = (event) => {
       
     </Modal>
 
-    
 
     <div className="header">
 
+      <img className="app__headerImage" src="https://user-images.githubusercontent.com/59893406/109395744-0374a580-78fc-11eb-81bd-fb7197ff13ba.png" alt="" />
       <div className="Instafeed">
         <h1>Instafeed</h1>
       </div>
-
-      <img className="app__headerImage" src="https://user-images.githubusercontent.com/59893406/109395744-0374a580-78fc-11eb-81bd-fb7197ff13ba.png" alt="" />
-
-      <div className= "search">
-      
-      <input type="text" placeholder="Search.."/>
+      <div className= "search"> 
+        <input type="text" placeholder="Search.."/>
       </div>
 
+      { user ? (
+          <Button onClick={() => authentication.signOut()}> Logout </Button>
+        ): (
+          <div className="logginContainer">
+            <Button onClick={() => setOpenSignIn(true)}> Sign In </Button>
+            
+            <Button onClick={() => setOpen(true)}> Sign up </Button>
+          </div>
+        
+        )
+      }
     </div>
-    {
-      user ? (
-        <Button onClick={() => authentication.signOut()}> Logout </Button>
-      ): (
-        <div className="logginContainer">
-           <Button onClick={() => setOpenSignIn(true)}> Sign In </Button>
-          
-           <Button onClick={() => setOpen(true)}> Sign up </Button>
-        </div>
-       
-      )
-    }
 
-   
+    <div className="app_posts">
+      <div>
+        {
+          posts.map(({id, post}) => (
+            <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
+          ))
+        }
+      </div>
+    </div>
 
 
-    {
-      posts.map(({id, post}) => (
-        <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
-      ))
-    }
+    {user?.displayName ? (
+      <ImageUpload username= {user.displayName} />
+    ): (
+      <h3>You need to login to upload</h3>
+    )}
 
   
   </div>
-  );
+   );
 }
 
 export default App;
