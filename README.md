@@ -23,7 +23,7 @@ Framework Used:
 
 Important Note:
 > New Feature will be added upon further team SCRUMS! <br/>
->Login<br />
+>Login, SignUp, Logout<br />
 
 
 <br><br><br>
