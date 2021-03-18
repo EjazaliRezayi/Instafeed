@@ -39,3 +39,7 @@
 .Post_comments{
     padding: 15px;
 }
+.Post_follow{
+    position: relative;
+    left: 220px;
+}
