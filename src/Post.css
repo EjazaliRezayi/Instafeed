@@ -23,3 +23,19 @@
 .Post_avatar{
     margin-right: 10px;
 }
+.Post_commentbox{
+    margin-top: 15px;
+    display: flex;
+}
+.Post_input{
+    flex: 2;
+    padding: 15px;
+    border: whitesmoke;
+}
+.Post_button{
+    flex: 1;
+    border: none;
+}
+.Post_comments{
+    padding: 15px;
+}

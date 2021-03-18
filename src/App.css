@@ -24,7 +24,7 @@
   border-bottom: 1px solid lightgray;
   height: 100px;
   background-color: #fafafa;
-  position: relative;             /*should make the header on top stay on the screen even when scrolling*/
+  position: relative;
   object-fit: contain;
   display: flex;
   justify-content: space-between;
