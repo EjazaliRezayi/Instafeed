@@ -7,6 +7,19 @@ import firebase from 'firebase';
 function Post({ postId, username, user, caption, imageUrl }) {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
+   
+
+
+    const onFollow =(event) =>{
+        event.preventDefault();
+        // username -> is the username of the user that posted the pic
+        datab.collection("following").doc(user.displayName).collection("userFollowing").add({
+             Isfollowing: username , Username: user.displayName 
+        });
+        
+
+    }
+
 
     useEffect(() => {
         let unsubscribe;
@@ -45,8 +58,9 @@ function Post({ postId, username, user, caption, imageUrl }) {
                 src="/static/images/avatar/1.jpg"
             />
             <h3> {username} </h3>
-            <button className="Post_follow" type="button">
-                    Follow
+            <button className="Post_follow" type="button" onClick={onFollow}>
+     
+                    Follow user
             </button>
         </div>
 
