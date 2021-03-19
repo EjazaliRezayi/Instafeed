@@ -16,6 +16,7 @@
 }
 
 .Post_header{
+    position:relative;
     display: flex;
     align-items: center;
     padding : 20px;
@@ -38,4 +39,8 @@
 }
 .Post_comments{
     padding: 15px;
+}
+.Post_follow{
+    position: absolute;
+    right: 40px;
 }

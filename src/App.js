@@ -218,7 +218,8 @@ const signIn = (event) => {
     {user?.displayName ? (
       <ImageUpload username= {user.displayName} />
     ): (
-      <h3>You need to login to upload</h3>
+      <div>
+      </div>
     )}
 
   
