@@ -45,7 +45,7 @@ function Post({ postId, username, user, caption, imageUrl }) {
                 src="/static/images/avatar/1.jpg"
             />
             <h3> {username} </h3>
-            <button className="Post_follow" type="button" onClick={postComment}>
+            <button className="Post_follow" type="button">
                     Follow
             </button>
         </div>
