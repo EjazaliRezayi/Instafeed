@@ -3,6 +3,7 @@ import './Post.css';
 import Avatar from "@material-ui/core/Avatar";
 import { datab } from './firebase';
 import firebase from 'firebase';
+import Like from './Like';
 
 function Post({ postId, username, user, caption, imageUrl }) {
     const [comments, setComments] = useState([]);
@@ -70,8 +71,13 @@ function Post({ postId, username, user, caption, imageUrl }) {
             alt="" 
             />
 
+            <Like>
+
+            </Like>
+            
             {/* underneath the image -> username and caption*/}
             <h4 className= "Post_text" ><strong> {username} </strong> {caption} </h4>
+
 
             {/*show all comments*/}
             <div className="Post_comments">
