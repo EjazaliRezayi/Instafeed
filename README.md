@@ -17,6 +17,7 @@ Core Features:
 >Post a Picture<br />
 >Comment a Picture<br />
 >Follow a user<br />
+>Like a post<br />
 
 Framework Used:
 >React<br />
