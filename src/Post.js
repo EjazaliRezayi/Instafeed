@@ -3,7 +3,6 @@ import './Post.css';
 import Avatar from "@material-ui/core/Avatar";
 import { datab } from './firebase';
 import firebase from 'firebase';
-import Like from './Like';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Favorite from '@material-ui/icons/Favorite';
