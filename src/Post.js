@@ -3,6 +3,11 @@ import './Post.css';
 import Avatar from "@material-ui/core/Avatar";
 import { datab } from './firebase';
 import firebase from 'firebase';
+import Like from './Like';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 function Post({ postId, username, user, caption, imageUrl }) {
     const [comments, setComments] = useState([]);
@@ -19,6 +24,16 @@ function Post({ postId, username, user, caption, imageUrl }) {
         
 
     }
+    const onLike =(event) =>{
+        event.preventDefault();
+        // username -> is the username of the user that posted the pic
+        datab.collection("posts").doc(postId).collection("likes").add({
+             UsersThatLikedPost: user.displayName 
+        });
+        
+
+    }
+
 
 
     useEffect(() => {
@@ -58,6 +73,7 @@ function Post({ postId, username, user, caption, imageUrl }) {
                 src="/static/images/avatar/1.jpg"
             />
             <h3> {username} </h3>
+            
             <button className="Post_follow" type="button" onClick={onFollow}>
      
                     Follow user
@@ -69,9 +85,26 @@ function Post({ postId, username, user, caption, imageUrl }) {
             src={imageUrl}
             alt="" 
             />
+            {/* --: like counter :--
+                onLike works ,icon changes color 
+                dosent revert to Border when clicked again 
+                need to add if statement that shows appropriate icon based on if user has liked the post already or not*/}
 
+
+            <div style={{
+                margin: 13
+            }}> 
+                <FormControlLabel
+                    control={<Checkbox icon={<FavoriteBorder />} 
+                    checkedIcon={<Favorite />}
+                    onClick={onLike}
+                        />}
+                />
+            </div>
+            
             {/* underneath the image -> username and caption*/}
             <h4 className= "Post_text" ><strong> {username} </strong> {caption} </h4>
+
 
             {/*show all comments*/}
             <div className="Post_comments">
