@@ -31,5 +31,3 @@ Important Note:
 
 
 
-Project Submitted as partial fulfilment of the requirements of SOEN 341. <br /><br />
-[<img src="https://www.concordia.ca/etc/designs/concordia/clientlibs/img/logo-concordia-university-montreal.png">](https://www.concordia.ca/)
